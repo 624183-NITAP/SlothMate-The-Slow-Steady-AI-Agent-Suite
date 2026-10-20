@@ -37,12 +37,12 @@ SlothMate tackles the 4 biggest energy drains of modern digital life:
 
 The complete source code is open source and ready to run locally or deploy to Render:
 
-{% github your-username/slothmate %}
+{% github 624183-NITAP/SlothMate-The-Slow-Steady-AI-Agent-Suite %}
 
 ### Quick Local Run:
 ```bash
-git clone https://github.com/your-username/slothmate.git
-cd slothmate
+git clone https://github.com/624183-NITAP/SlothMate-The-Slow-Steady-AI-Agent-Suite.git
+cd SlothMate-The-Slow-Steady-AI-Agent-Suite
 npm install
 npm start
 # Visit http://localhost:3000

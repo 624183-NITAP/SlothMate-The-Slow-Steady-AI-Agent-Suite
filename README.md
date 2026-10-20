@@ -61,8 +61,8 @@ Most importantly, **open-source AI is at the absolute core** of SlothMate:
 
 ### 1. Clone & Install
 ```bash
-git clone https://github.com/your-username/slothmate.git
-cd slothmate
+git clone https://github.com/624183-NITAP/SlothMate-The-Slow-Steady-AI-Agent-Suite.git
+cd SlothMate-The-Slow-Steady-AI-Agent-Suite
 npm install
 ```
 

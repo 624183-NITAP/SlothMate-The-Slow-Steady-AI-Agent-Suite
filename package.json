@@ -16,9 +16,12 @@
     "sloth",
     "hacktoberfest",
     "render",
-    "local-ai"
   ],
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/624183-NITAP/SlothMate-The-Slow-Steady-AI-Agent-Suite.git"
+  },
+  "author": "624183-NITAP",
   "license": "MIT",
   "type": "commonjs",
   "dependencies": {
