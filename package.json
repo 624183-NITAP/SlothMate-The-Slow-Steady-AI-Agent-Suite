@@ -1,3 +1,4 @@
+
 {
   "name": "slothmate",
   "version": "1.0.0",
@@ -15,7 +16,7 @@
     "transformers",
     "sloth",
     "hacktoberfest",
-    "render",
+    "render"
   ],
   "repository": {
     "type": "git",
