@@ -1,0 +1,19 @@
+# Render Blueprint for SlothMate
+# https://render.com/docs/blueprint-spec
+
+services:
+  - type: web
+    name: slothmate
+    runtime: node
+    plan: free
+    region: oregon
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: HF_MODEL
+        value: Qwen/Qwen2.5-7B-Instruct
+      # Add HF_TOKEN in your Render dashboard environment settings if desired

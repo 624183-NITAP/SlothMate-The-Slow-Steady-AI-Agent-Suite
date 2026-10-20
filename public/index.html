@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SlothMate 🦥 The Slow & Steady AI Agent Harness</title>
+  <meta name="description" content="SlothMate: An open-source AI agent suite built for International Sloth Day that rewards pure laziness with offline local models, chat distillation, lazy recipes, clutter tidying, and bedtime soundscapes.">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="icon" href="/assets/sloan-mascot.jpg" type="image/jpeg">
+</head>
+<body>
+
+  <!-- Sticky Top Header -->
+  <header>
+    <div class="container header-content">
+      <a href="#" class="brand">
+        <img src="/assets/sloan-mascot.jpg" alt="Sloan the Sloth" class="mascot-avatar">
+        <div class="brand-text">
+          <h1>SlothMate <span class="brand-badge">Open AI Core</span></h1>
+        </div>
+      </a>
+      <div class="header-controls">
+        <button id="slothModeToggle" class="sloth-toggle-btn" title="Toggle extra-chill slow mode">
+          <span>🦥</span> Sloth Mode
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-grid">
+        <div class="hero-info">
+          <div class="hero-tag">
+            <span class="dot"></span>
+            <span>Hacktoberfest Week 3 • International Sloth Day 🦥</span>
+          </div>
+          <h2 class="hero-title">
+            The AI Harness That <span>Rewards Pure Laziness</span>.
+          </h2>
+          <p class="hero-desc">
+            Sloths conserve energy, move at their own pace, and never overcomplicate life.
+            <strong>SlothMate</strong> runs open-weight models locally and offline so you can do less,
+            rest more, and automate the tasks you dread—zero subscriptions, 100% privacy.
+          </p>
+
+          <!-- Sloan's Mascot Wisdom Bubble -->
+          <div class="sloan-quote-box">
+            <div class="quote-icon">🦥</div>
+            <div>
+              <div class="sloan-quote-text" id="sloanQuoteText">
+                "Why run when you can crawl? Why crawl when you can hang upside down? Movement is an evolutionary luxury."
+              </div>
+              <span class="sloan-quote-author">— Sloan the Sloth AI</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mascot Showcase & Sloth Energy Meter -->
+        <div class="mascot-hero-card">
+          <img src="/assets/sloan-mascot.jpg" alt="Sloan relaxing with laptop" class="mascot-hero-img">
+          <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 4px;">Sloan the Sloth</h3>
+          <p style="font-size: 0.8rem; color: var(--text-muted);">Chief Energy Conservation Officer</p>
+          
+          <div class="energy-tracker">
+            <div class="stat-item">
+              <div class="stat-val" id="statMinutes">48m</div>
+              <div class="stat-lbl">Time Saved</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-val" id="statJoules">1,240 J</div>
+              <div class="stat-lbl">Energy Saved</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-val" id="statAwkward">9</div>
+              <div class="stat-lbl">Texts Avoided</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Open AI Engine Control Bar -->
+    <section class="engine-bar">
+      <div class="engine-bar-label">
+        <span style="font-size: 1.1rem;">⚙️</span>
+        <span><strong>Open-Source AI Engine:</strong></span>
+      </div>
+      <div class="engine-selector">
+        <button class="engine-chip active" data-engine="auto" title="Built-in zero-latency open agent harness">
+          🌿 Sloth Heuristic (Instant Offline)
+        </button>
+        <button class="engine-chip" data-engine="browser" title="Runs in your browser via WebGPU / WebAssembly">
+          ⚡ In-Browser Transformers.js (Local)
+        </button>
+        <button class="engine-chip" data-engine="huggingface" title="Qwen 2.5 / Llama 3.2 Open Weights">
+          🌐 Hugging Face Open-Weights
+        </button>
+        <button class="engine-chip" data-engine="ollama" title="Local Ollama instance at localhost:11434">
+          💻 Local Ollama (Localhost)
+        </button>
+      </div>
+    </section>
+
+    <!-- Navigation Tabs for the 4 Sloth Modules -->
+    <nav class="tabs-nav" aria-label="Sloth Modules">
+      <button class="tab-btn active" data-tab="tab-distill">
+        <span>💬</span> 1. SlothDistill (Chats & Inboxes)
+      </button>
+      <button class="tab-btn" data-tab="tab-chef">
+        <span>🥦</span> 2. SlothChef (Lazy Meals)
+      </button>
+      <button class="tab-btn" data-tab="tab-tidy">
+        <span>🧹</span> 3. SlothTidier (Clutter Files)
+      </button>
+      <button class="tab-btn" data-tab="tab-sanctuary">
+        <span>🌙</span> 4. SlothSanctuary (Wind-Down)
+      </button>
+    </nav>
+
+    <!-- ==============================================
+         MODULE 1: SlothDistill
+         ============================================== -->
+    <section id="tab-distill" class="tab-pane active">
+      <div class="workstation-grid">
+        <!-- Left: Input & Samples -->
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title"><span>📥</span> Chat / Thread Input</h3>
+          </div>
+          <p class="card-subtitle">
+            Paste overwhelming group messages, Slack channels, or email rants. We'll extract what matters and ghostwrite your reply.
+          </p>
+
+          <div class="sample-presets">
+            <span style="font-size: 0.78rem; color: var(--text-dim); align-self: center;">Try samples:</span>
+            <button class="sample-chip" id="presetFamily">👨‍👩‍👧 Family WhatsApp (34 msgs)</button>
+            <button class="sample-chip" id="presetSlack">🚨 Slack P1 Incident</button>
+            <button class="sample-chip" id="presetRoommates">🏠 Roommates Rent & Dishes</button>
+          </div>
+
+          <textarea id="chatInput" class="input-box" placeholder="Paste chaotic messages here or click a sample above..."></textarea>
+
+          <button id="distillBtn" class="btn-primary">
+            <span>⚡</span> Distill & Generate Lazy Replies
+          </button>
+        </div>
+
+        <!-- Right: Distilled Output -->
+        <div class="card output-card" id="distillOutput">
+          <div class="card-header">
+            <h3 class="card-title"><span>✨</span> Distilled Intelligence</h3>
+          </div>
+          <div style="color: var(--text-muted); text-align: center; margin: auto; padding: 40px 0;">
+            <div style="font-size: 2.5rem; margin-bottom: 12px; opacity: 0.6;">🦥</div>
+            <p>Paste a chat thread or click one of the samples to watch SlothMate distill the noise into effortless 1-click replies.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================================
+         MODULE 2: SlothChef
+         ============================================== -->
+    <section id="tab-chef" class="tab-pane">
+      <div class="workstation-grid">
+        <!-- Left: Fridge Photo / Ingredients -->
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title"><span>📸</span> Fridge / Pantry Snapshot</h3>
+            <button class="btn-secondary" id="loadSampleFridgeBtn">🖼️ Load Sample Fridge</button>
+          </div>
+          <p class="card-subtitle">
+            Never stand with the fridge door open wondering what to eat. Upload a photo or list whatever is in your fridge.
+          </p>
+
+          <div class="fridge-preview-box">
+            <img id="fridgePreviewImg" src="" alt="Fridge Preview" class="fridge-preview-img" style="display: none;">
+            <label for="fridgeFileInput" class="upload-overlay" id="uploadPlaceholder">
+              <span style="font-size: 2.2rem;">🧊</span>
+              <span style="font-size: 0.88rem; color: var(--text-muted);">
+                Click to upload fridge photo or click <strong>Load Sample Fridge</strong>
+              </span>
+              <input type="file" id="fridgeFileInput" accept="image/*" style="display: none;">
+            </label>
+          </div>
+
+          <label style="font-size: 0.82rem; color: var(--text-muted); display: block; margin-bottom: 6px;">
+            Identified / Available Ingredients:
+          </label>
+          <textarea id="ingredientsInput" class="input-box" style="height: 90px;" placeholder="e.g. eggs, cheddar cheese, spinach, milk, leftover pasta, onion..."></textarea>
+
+          <button id="chefBtn" class="btn-primary">
+            <span>✨</span> Generate Sloth Meals & Grocery List
+          </button>
+        </div>
+
+        <!-- Right: Lazy Recipes & Grocery List -->
+        <div class="card output-card" id="chefOutput">
+          <div class="card-header">
+            <h3 class="card-title"><span>🍲</span> Zero-Effort Sloth Sustenance</h3>
+          </div>
+          <div style="color: var(--text-muted); text-align: center; margin: auto; padding: 40px 0;">
+            <div style="font-size: 2.5rem; margin-bottom: 12px; opacity: 0.6;">🍳</div>
+            <p>Click "Load Sample Fridge" to see 3-minute, 1-pan recipes and an auto-generated grocery shopping list.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================================
+         MODULE 3: SlothTidier
+         ============================================== -->
+    <section id="tab-tidy" class="tab-pane">
+      <div class="workstation-grid">
+        <!-- Left: Messy File List -->
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title"><span>📂</span> Messy Downloads & Desktop</h3>
+            <button class="btn-secondary" id="loadSampleFilesBtn">📄 Load Sample Clutter</button>
+          </div>
+          <p class="card-subtitle">
+            Drop in your messy file names. The open agent automatically tags, standardizes dates, and creates a 1-click cleanup script.
+          </p>
+
+          <textarea id="filesInput" class="input-box" placeholder="Paste messy filenames (one per line) or click 'Load Sample Clutter'..."></textarea>
+
+          <button id="tidyBtn" class="btn-primary">
+            <span>🪄</span> Organize & Generate 1-Click Script
+          </button>
+        </div>
+
+        <!-- Right: Organization & Script Output -->
+        <div class="card output-card" id="tidyOutput">
+          <div class="card-header">
+            <h3 class="card-title"><span>✨</span> Clean Organized Structure</h3>
+          </div>
+          <div style="color: var(--text-muted); text-align: center; margin: auto; padding: 40px 0;">
+            <div style="font-size: 2.5rem; margin-bottom: 12px; opacity: 0.6;">🧹</div>
+            <p>Paste your disorganized desktop files to auto-sort into clean folders and copy instant PowerShell/Bash scripts.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================================
+         MODULE 4: SlothSanctuary
+         ============================================== -->
+    <section id="tab-sanctuary" class="tab-pane">
+      <div class="workstation-grid">
+        <!-- Left: Breathing Guide & Synthesizer -->
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title"><span>🌿</span> True Sloth Breathing Guide</h3>
+          </div>
+          <p class="card-subtitle">
+            Sloths take only 6 breaths per minute. Sync your breath with the glowing orb to calm your nervous system.
+          </p>
+
+          <div class="sanctuary-center">
+            <div class="breath-circle-wrapper">
+              <div class="breath-outer-ring"></div>
+              <div class="breath-orb">
+                <span class="breath-text" id="breathStateText">Inhale...</span>
+                <span class="breath-cadence">6 breaths/min</span>
+              </div>
+            </div>
+            <p style="font-size: 0.82rem; color: var(--emerald-light);">Biological cadence: 5s Inhale • 5s Exhale</p>
+          </div>
+
+          <!-- Procedural Web Audio Ambient Soundscape -->
+          <div style="margin-top: 18px; border-top: 1px solid var(--border-subtle); padding-top: 18px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+              <h4 style="font-size: 0.95rem; color: var(--text-main);">
+                <span>🎶</span> Ambient Soundscape (100% Offline Synthesized)
+              </h4>
+            </div>
+            
+            <button id="masterAudioBtn" class="btn-primary" style="margin-top: 0; margin-bottom: 16px;">
+              <span>▶️</span> Play Synthesized Rainforest (Web Audio)
+            </button>
+
+            <div class="sound-mixer">
+              <div class="mixer-channel">
+                <div class="mixer-header">
+                  <span>🌧️ Tropical Rain</span>
+                </div>
+                <input type="range" class="sound-slider" id="sliderRain" min="0" max="1" step="0.05" value="0.35">
+              </div>
+
+              <div class="mixer-channel">
+                <div class="mixer-header">
+                  <span>🍃 Canopy Wind</span>
+                </div>
+                <input type="range" class="sound-slider" id="sliderWind" min="0" max="1" step="0.05" value="0.25">
+              </div>
+
+              <div class="mixer-channel">
+                <div class="mixer-header">
+                  <span>🌊 Lo-Fi Brown Noise</span>
+                </div>
+                <input type="range" class="sound-slider" id="sliderBrown" min="0" max="1" step="0.05" value="0.40">
+              </div>
+
+              <div class="mixer-channel">
+                <div class="mixer-header">
+                  <span>🔔 Zen Temple Chimes</span>
+                </div>
+                <input type="range" class="sound-slider" id="sliderChimes" min="0" max="1" step="0.05" value="0.30">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Bedtime Story Generator -->
+        <div class="card output-card">
+          <div class="card-header">
+            <h3 class="card-title"><span>📖</span> Sloth Bedtime Storyteller</h3>
+          </div>
+          <p class="card-subtitle">
+            Generates slow-paced, sensory-rich calming bedtime stories to lull your mind into deep restorative sleep.
+          </p>
+
+          <div style="display: flex; gap: 10px; margin-bottom: 14px;">
+            <select id="storyThemeSelect" style="flex: 1; background: rgba(8, 14, 11, 0.9); border: 1px solid var(--border-subtle); color: var(--text-main); padding: 10px 14px; border-radius: var(--radius-md); font-family: inherit; font-size: 0.88rem;">
+              <option value="canopy">🌳 The Mossy Canopy of Manuel Antonio</option>
+              <option value="river">🛶 The River That Forgot to Rush</option>
+              <option value="stars">✨ The Sloth's Constellation Guide</option>
+            </select>
+            <button id="generateStoryBtn" class="btn-primary" style="margin-top: 0; width: auto; padding: 10px 20px;">
+              <span>📖</span> Dream
+            </button>
+          </div>
+
+          <div class="summary-box" style="flex: 1; background: rgba(8, 14, 11, 0.85); overflow-y: auto;" id="storyContentBox">
+            <div style="font-size: 1.15rem; font-weight: 700; color: var(--amber-light); margin-bottom: 8px;">
+              The Mossy Canopy of Manuel Antonio
+            </div>
+            <div style="font-size: 0.8rem; color: var(--emerald-light); margin-bottom: 14px;">
+              ⏱️ 3-minute wind-down • 6 breaths per minute (True Sloth Cadence)
+            </div>
+            <div style="font-size: 0.95rem; line-height: 1.7; color: #e2e8f0;">
+              High above the damp rainforest floor, the leaves of the wild Cecropia tree barely tremble. 
+              Sloan the three-toed sloth does not rush. He has not rushed in seven years. 
+              The evening mist wraps the high branch in a cool, silver blanket. 
+              Below, tiny insects sing a rhythmic, repeating lullaby that never changes pitch. 
+              A warm breeze passes through his green-tinted fur—a miniature ecosystem of peaceful algae living in harmony. 
+              Sloan closes his dark, heavy eyelids. The world down there is hurried, running after things that do not matter. 
+              Up here, all that exists is the slow inhale of rain-washed ozone, the creak of damp bark, and the knowledge that tomorrow will be just as wonderfully still.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-content">
+      <div style="display: flex; align-items: center; gap: 8px; font-weight: 700;">
+        <span style="font-size: 1.3rem;">🦥</span> SlothMate
+      </div>
+      <div class="footer-links">
+        <a href="https://dev.to/challenges/hacktoberfest-week3-2026-10-19" target="_blank" rel="noopener">Hacktoberfest Week 3 Challenge</a>
+        <span>•</span>
+        <a href="https://dev.to/sloan" target="_blank" rel="noopener">Dev.to Sloan the Sloth</a>
+        <span>•</span>
+        <a href="https://render.com" target="_blank" rel="noopener">Render Deployed</a>
+      </div>
+      <div class="footer-copy">
+        Crafted with open-source AI, Transformers.js, Web Audio API, and extreme dedication to doing less.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="/js/audio-synth.js"></script>
+  <script src="/js/transformers-client.js"></script>
+  <script src="/js/app.js"></script>
+</body>
+</html>
