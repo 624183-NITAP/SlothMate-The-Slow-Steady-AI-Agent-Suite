@@ -8,6 +8,9 @@
     "start": "node server.js",
     "dev": "node server.js"
   },
+  "bin": {
+    "0": "./server.js"
+  },
   "engines": {
     "node": ">=18.0.0"
   },
