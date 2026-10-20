@@ -26,7 +26,7 @@ SlothMate tackles the 4 biggest energy drains of modern digital life:
 
 ## 🎥 Demo
 
-- **Live Deployed App on Render**: `https://slothmate.onrender.com` *(or your Render deployed URL)*
+- **Live Deployed App on Render**: **[https://slothmate-the-slow-steady-ai-agent-suite.onrender.com](https://slothmate-the-slow-steady-ai-agent-suite.onrender.com)**
 - **Interactive UI Preview**: Features Sloan the Sloth in a lush rainforest glassmorphic dashboard with instant presets, procedural Web Audio generation, and local AI execution.
 
 *(Tip: You can try all 4 modules instantly with the built-in 1-click sample presets for Family Chats, Slack Incidents, Fridge Photos, and Messy Downloads!)*

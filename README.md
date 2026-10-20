@@ -3,6 +3,8 @@
 > **Built for International Sloth Day & the Hacktoberfest Open-Source AI Challenge (Week 3: Slow and Steady)**  
 > *Channeling our inner sloth to automate what we dread, conserve biological energy, and run 100% open-weight AI locally and on Render.*
 
+🌐 **Live Deployed App**: [https://slothmate-the-slow-steady-ai-agent-suite.onrender.com](https://slothmate-the-slow-steady-ai-agent-suite.onrender.com)
+
 ![Sloan the Sloth](/public/assets/sloan-mascot.jpg)
 
 ---
